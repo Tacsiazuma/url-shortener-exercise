@@ -2,12 +2,10 @@ package app.tier;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 
-@SpringBootApplication
-@ComponentScan(basePackages = "app.tier.config")
+@SpringBootApplication(scanBasePackages = "app.tier.*")
 public class UrlShortenerApplication {
     public static void main(String[] args) {
-        SpringApplication.run(UrlShortenerApplication.class);
+        SpringApplication.run(UrlShortenerApplication.class, args);
     }
 }
