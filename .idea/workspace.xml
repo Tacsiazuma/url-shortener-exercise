@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e1a7e3ca-d540-4b0d-98b5-8d6a25819b23" name="Changes" comment="Initial setup">
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/tier/api/RedirectController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/tier/api/ShortenerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/tier/api/response/GeneratedUrl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/tier/repository/InMemoryShortenedUrlRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/tier/repository/ShortenedUrlRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/app/tier/service/RandomIdGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+    <list default="true" id="e1a7e3ca-d540-4b0d-98b5-8d6a25819b23" name="Changes" comment="Shortening tested with fake in memory repository. Stats remain.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/tier/UrlShortenerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/tier/UrlShortenerApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/tier/config/UrlShortenerConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/tier/config/UrlShortenerConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/tier/facade/UrlShortenerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/tier/facade/UrlShortenerFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/app/tier/facade/UrlShortenerFacadeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/app/tier/facade/UrlShortenerFacadeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/tier/repository/InMemoryShortenedUrlRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/tier/repository/InMemoryShortenedUrlRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -59,7 +49,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="JUnit.UrlShortenerFacadeTest">
+  <component name="RunManager" selected="Application.UrlShortenerApplication">
     <configuration name="UrlShortenerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="app.tier.UrlShortenerApplication" />
       <module name="challenge" />
@@ -135,9 +125,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UrlShortenerApplication" />
         <item itemvalue="JUnit.UrlShortenerFacadeTest" />
         <item itemvalue="JUnit.UrlShortenerFacadeTest.itShouldReturnShortenedUrl" />
-        <item itemvalue="Application.UrlShortenerApplication" />
         <item itemvalue="JUnit.UrlShortenerFacadeTest.testExists" />
       </list>
     </recent_temporary>
@@ -158,11 +148,30 @@
       <option name="project" value="LOCAL" />
       <updated>1674031574187</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Shortening tested with fake in memory repository. Stats remain.">
+      <created>1674035536117</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1674035536117</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial setup" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial setup" />
+    <MESSAGE value="Shortening tested with fake in memory repository. Stats remain." />
+    <option name="LAST_COMMIT_MESSAGE" value="Shortening tested with fake in memory repository. Stats remain." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/app/tier/config/UrlShortenerConfiguration.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
