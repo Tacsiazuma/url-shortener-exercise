@@ -44,4 +44,16 @@ public class UrlShortenerFacadeTest {
         // THEN
         assertEquals("Url to be shortened should not be empty", thrown.getMessage());
     }
+
+    @Test
+    public void itShouldThrowInvalidArgumentWhenInvalidUrlGiven() {
+        // GIVEN
+        String url = "some.invalid.url";
+        // WHEN
+        IllegalArgumentException thrown = Assertions.assertThrows(IllegalArgumentException.class, () -> {
+            underTest.shorten(url);
+        });
+        // THEN
+        assertEquals("Url should be valid", thrown.getMessage());
+    }
 }
