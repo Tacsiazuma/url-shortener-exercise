@@ -19,6 +19,11 @@ public class RandomIdGenerator {
 
     private final Random random = new Random();
 
+    /**
+     * Returns a random base58 string with the given length
+     * @param length the length of the returned string
+     * @return a random base58
+     */
     public String getBase58(int length) {
         StringBuilder sb = new StringBuilder(length);
 
