@@ -11,6 +11,9 @@ public class InMemoryShortenedUrlRepository implements ShortenedUrlRepository {
     private final Map<String, String> storage = new HashMap<>();
     @Override
     public void create(String url, String id) {
+        if (storage.containsKey(id)) {
+            throw new IllegalArgumentException("The id already exists!");
+        }
         storage.put(id, url);
     }
 

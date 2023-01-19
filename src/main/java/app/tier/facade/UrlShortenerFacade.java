@@ -3,11 +3,14 @@ package app.tier.facade;
 
 import app.tier.repository.ShortenedUrlRepository;
 import app.tier.service.RandomIdGenerator;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
 public class UrlShortenerFacade {
+    private static final Logger LOGGER = LoggerFactory.getLogger(UrlShortenerFacade.class);
     private final RandomIdGenerator randomIdGenerator;
     private final ShortenedUrlRepository repository;
 
@@ -26,8 +29,16 @@ public class UrlShortenerFacade {
             throw new IllegalArgumentException("Url should be valid");
         }
         // IDs should be generated beforehand in this way we can just pick up one which is guaranteed to be unique
-        String id = randomIdGenerator.getBase58(6);
-        repository.create(url, id);
+        String id = null;
+        while(true) {
+            try {
+                id = randomIdGenerator.getBase58(6);
+                repository.create(url, id);
+                break;
+            } catch (IllegalArgumentException ex) {
+                LOGGER.debug("Duplicate key '{}'", id);
+            }
+        }
         return id;
     }
 

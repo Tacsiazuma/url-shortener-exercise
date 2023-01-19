@@ -4,8 +4,7 @@ import app.tier.config.UrlShortenerConfiguration;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 
 public class UrlShortenerFacadeTest {
@@ -19,9 +18,19 @@ public class UrlShortenerFacadeTest {
         // WHEN
         String actual = underTest.shorten(url);
         // THEN
-        assertTrue(actual.matches("[123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz]{6}"));
+        assertEquals("repeat", actual);
     }
 
+    @Test
+    public void itShouldRetryWhenSameIdIsGenerated() {
+        // GIVEN
+        String url = "https://www.example.com";
+        String previous = underTest.shorten(url);
+        // WHEN
+        String actual = underTest.shorten(url);
+        // THEN
+        assertNotEquals(previous, actual);
+    }
     @Test
     public void itShouldReturnTargetUrlIfIdExists() {
         // GIVEN
