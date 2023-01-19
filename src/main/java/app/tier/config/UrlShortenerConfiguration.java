@@ -10,11 +10,11 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class UrlShortenerConfiguration {
     public UrlShortenerFacade testFacade() {
-        return urlShortenerFacade(new InMemoryShortenedUrlRepository());
+        return urlShortenerFacade(new RandomIdGenerator(), new InMemoryShortenedUrlRepository());
     }
 
     @Bean
-    public UrlShortenerFacade urlShortenerFacade(ShortenedUrlRepository repository) {
-        return new UrlShortenerFacade(new RandomIdGenerator(), repository);
+    public UrlShortenerFacade urlShortenerFacade(RandomIdGenerator randomIdGenerator, ShortenedUrlRepository repository) {
+        return new UrlShortenerFacade(randomIdGenerator, repository);
     }
 }

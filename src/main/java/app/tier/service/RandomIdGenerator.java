@@ -1,8 +1,11 @@
 package app.tier.service;
 
 
+import org.springframework.stereotype.Component;
+
 import java.util.Random;
 
+@Component
 public class RandomIdGenerator {
 
     // 58 because we exclude misreaded characters like 0/O, I/l from the original base62
